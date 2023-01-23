@@ -1,6 +1,24 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components'
 
 export default createGlobalStyle`
+  * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body{
+      background: var(--gray-600);
+      color: var(--gray-100);
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    body , input , textarea , button {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 1rem;
+    }
+    
     :root {
     --gray-100: #F2F2F2;
     --gray-200: #D9D9D9; 
@@ -15,21 +33,4 @@ export default createGlobalStyle`
     --blueDark: #1E6F9F;
     --danger: #E25858;
   }
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    
-    body{
-    background: var(--gray-600);
-    color: var(--gray-100);
-    -webkit-font-smoothing: antialiased;
-    }
-    
-    body , input , textarea , button{
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    font-size: 1rem;
-}
-`;
+`

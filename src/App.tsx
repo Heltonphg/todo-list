@@ -1,14 +1,14 @@
 import React from 'react'
-import GlobalStyles from './styles/global.styles'
+import { FormTodo } from './components/FormTodo'
 import Header from './components/Header'
+import GlobalStyles from './styles/global.styles'
 
-function App() {
+export const App: React.FC = () => {
   return (
     <>
       <Header />
+      <FormTodo />
       <GlobalStyles />
     </>
   )
 }
-
-export default App
