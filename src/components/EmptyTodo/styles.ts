@@ -6,7 +6,7 @@ export const Container = styled.div`
 
   align-items: center;
 
-  margin-top: 6rem;
+  margin-top: 4rem;
 `
 
 export const Image = styled.img`

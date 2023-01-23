@@ -1,3 +1,4 @@
+import { EmptyTodo } from '../EmptyTodo'
 import { Line } from '../Line'
 import { Container, Content, HeaderList, LabelCreateText, LabelDoneText } from './styles'
 
@@ -11,6 +12,8 @@ export const ListTodo: React.FC = () => {
         </HeaderList>
 
         <Line />
+
+        <EmptyTodo />
       </Content>
     </Container>
   )
