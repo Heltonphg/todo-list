@@ -1,10 +1,11 @@
 import React from 'react'
-import { Container } from './styles'
+import logoTodo from '../../assets/Logo.png'
+import { Container, Logo } from './styles'
 
 const Header: React.FC = () => {
   return (
     <Container>
-      <p>ddd</p>
+      <Logo src={logoTodo} />
     </Container>
   )
 }
