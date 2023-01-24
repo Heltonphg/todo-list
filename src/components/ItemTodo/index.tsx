@@ -1,8 +1,7 @@
 import React from 'react'
-import { Trash } from 'phosphor-react'
 import { Todo } from '../../screens/TodoList'
 import { Chebox } from '../Chebox'
-import { Container, Title } from './styles'
+import { Container, Title, TrashIcon } from './styles'
 
 interface IItemTodoProps {
   item: Todo
@@ -11,9 +10,9 @@ interface IItemTodoProps {
 export const ItemTodo: React.FC<IItemTodoProps> = ({ item }) => {
   return (
     <Container>
-      <Chebox />
+      <Chebox checked={item.completed} />
       <Title>{item.title}</Title>
-      <Trash size={20} />
+      <TrashIcon />
     </Container>
   )
 }
