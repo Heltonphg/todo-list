@@ -46,3 +46,19 @@ export const LabelDoneText = styled.p`
   font-size: 16px;
   line-height: 17px;
 `
+export const ValueText = styled.span`
+  color: var(--gray-100);
+  font-size: 14px;
+
+  padding: 4px 10px;
+
+  border-radius: 8px;
+  background: var(--gray-400);
+  border-radius: 999px;
+
+  margin-left: 10px;
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+`

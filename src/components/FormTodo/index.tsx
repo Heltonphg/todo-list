@@ -12,6 +12,7 @@ export const FormTodo: React.FC<FormTodoProps> = ({ onCreateTodo }) => {
   function createTodo(event: FormEvent) {
     event.preventDefault()
     onCreateTodo(title)
+    setTitle('')
   }
 
   return (

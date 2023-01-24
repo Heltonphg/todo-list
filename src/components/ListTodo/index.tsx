@@ -2,7 +2,7 @@ import { Todo } from '../../screens/TodoList'
 import { EmptyTodo } from '../EmptyTodo'
 import { ItemTodo } from '../ItemTodo'
 import { Line } from '../Line'
-import { Container, Content, HeaderList, LabelCreateText, LabelDoneText } from './styles'
+import { Container, Content, HeaderList, LabelCreateText, LabelDoneText, ValueText } from './styles'
 
 interface IListTodoProps {
   todos: Todo[]
@@ -15,8 +15,15 @@ export const ListTodo: React.FC<IListTodoProps> = ({ todos, onDeleteTodo, onComp
     <Container>
       <Content>
         <HeaderList>
-          <LabelCreateText>Tarefas criadas</LabelCreateText>
-          <LabelDoneText>Concluídas</LabelDoneText>
+          <LabelCreateText>
+            Tarefas criadas: <ValueText>{todos.length}</ValueText>
+          </LabelCreateText>
+          <LabelDoneText>
+            Concluídas:
+            <ValueText>
+              {todos.filter((todo) => todo.completed).length} de {todos.length}
+            </ValueText>
+          </LabelDoneText>
         </HeaderList>
 
         <Line />
