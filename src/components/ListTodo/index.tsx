@@ -6,9 +6,11 @@ import { Container, Content, HeaderList, LabelCreateText, LabelDoneText } from '
 
 interface IListTodoProps {
   todos: Todo[]
+  onDeleteTodo: (id: string) => void
+  onCompletedTodo: (id: string) => void
 }
 
-export const ListTodo: React.FC<IListTodoProps> = ({ todos }) => {
+export const ListTodo: React.FC<IListTodoProps> = ({ todos, onDeleteTodo, onCompletedTodo }) => {
   return (
     <Container>
       <Content>
@@ -19,7 +21,14 @@ export const ListTodo: React.FC<IListTodoProps> = ({ todos }) => {
 
         <Line />
         {todos.length > 0 ? (
-          todos.map((todo) => <ItemTodo key={todo.id} item={todo} />)
+          todos.map((todo) => (
+            <ItemTodo
+              key={todo.id}
+              item={todo}
+              onDeleteTodo={onDeleteTodo}
+              onCompletedTodo={onCompletedTodo}
+            />
+          ))
         ) : (
           <EmptyTodo />
         )}

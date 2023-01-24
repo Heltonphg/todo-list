@@ -5,14 +5,16 @@ import { Container, Title, TrashIcon } from './styles'
 
 interface IItemTodoProps {
   item: Todo
+  onDeleteTodo: (id: string) => void
+  onCompletedTodo: (id: string) => void
 }
 
-export const ItemTodo: React.FC<IItemTodoProps> = ({ item }) => {
+export const ItemTodo: React.FC<IItemTodoProps> = ({ item, onDeleteTodo, onCompletedTodo }) => {
   return (
     <Container>
-      <Chebox checked={item.completed} />
+      <Chebox checked={item.completed} onClick={() => onCompletedTodo(item.id)} />
       <Title>{item.title}</Title>
-      <TrashIcon />
+      <TrashIcon onClick={() => onDeleteTodo(item.id)} />
     </Container>
   )
 }

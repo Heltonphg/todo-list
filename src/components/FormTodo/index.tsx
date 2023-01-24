@@ -1,12 +1,17 @@
 import React, { FormEvent, useState } from 'react'
 import { PlusCircle } from 'phosphor-react'
-import { Form, Input, Button } from './styles'
+import { Button, Form, Input } from './styles'
 
-export const FormTodo: React.FC = () => {
+interface FormTodoProps {
+  onCreateTodo: (title: string) => void
+}
+
+export const FormTodo: React.FC<FormTodoProps> = ({ onCreateTodo }) => {
   const [title, setTitle] = useState('')
 
   function createTodo(event: FormEvent) {
     event.preventDefault()
+    onCreateTodo(title)
   }
 
   return (
