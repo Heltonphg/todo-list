@@ -1,8 +1,14 @@
+import { Todo } from '../../screens/TodoList'
 import { EmptyTodo } from '../EmptyTodo'
+import { ItemTodo } from '../ItemTodo'
 import { Line } from '../Line'
 import { Container, Content, HeaderList, LabelCreateText, LabelDoneText } from './styles'
 
-export const ListTodo: React.FC = () => {
+interface IListTodoProps {
+  todos: Todo[]
+}
+
+export const ListTodo: React.FC<IListTodoProps> = ({ todos }) => {
   return (
     <Container>
       <Content>
@@ -12,8 +18,11 @@ export const ListTodo: React.FC = () => {
         </HeaderList>
 
         <Line />
-
-        <EmptyTodo />
+        {todos.length > 0 ? (
+          todos.map((todo) => <ItemTodo key={todo.id} item={todo} />)
+        ) : (
+          <EmptyTodo />
+        )}
       </Content>
     </Container>
   )
