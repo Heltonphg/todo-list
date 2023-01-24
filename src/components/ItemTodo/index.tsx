@@ -13,7 +13,7 @@ export const ItemTodo: React.FC<IItemTodoProps> = ({ item, onDeleteTodo, onCompl
   return (
     <Container>
       <Chebox checked={item.completed} onClick={() => onCompletedTodo(item.id)} />
-      <Title>{item.title}</Title>
+      <Title checked={item.completed}>{item.title}</Title>
       <TrashIcon onClick={() => onDeleteTodo(item.id)} />
     </Container>
   )
